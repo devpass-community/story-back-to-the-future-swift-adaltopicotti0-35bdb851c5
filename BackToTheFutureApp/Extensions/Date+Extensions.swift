@@ -5,12 +5,17 @@ extension Date {
     func dateAfter(years: Int) -> Date? {
      
         // TODO
-        return nil
+        let date = Date()
+        let calendar = Calendar.current
+        let newDate = calendar.date(byAdding: .year, value: years, to: date)
+        return newDate
     }
     
     func formattedDate() -> String {
         
         // TODO
-        return ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return dateFormatter.string(from: self)
     }
 }
